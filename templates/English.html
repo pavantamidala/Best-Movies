@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% block content %}
+    <h1>Hollywood Best Movies</h1>
+    {% endblock%}
+    
+    
+
+    
+    {% for Movie in movies %}
+    <h1>Movie Title : {{Movie.Movie_title}}</h1>
+    <h1>Director : {{Movie.Director}}</h1>
+    <h1>Starring : {{Movie.Starring}}</h1>
+    <h1>Production Company : {{Movie.Production_company}}</h1>
+    <h3>Releas Date : {{Movie.Release_Date}}</h3>
+    <h3>Language : {{Movie.Movie_Language}}</h3>
+    
+
+    <hr>
+    {% endfor %}
+    
+    
+</body>
+
+</html>

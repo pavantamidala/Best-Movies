@@ -1,18 +1,4 @@
-# Django #
-*.log
-*.pot
-*.pyc
-__pycache__
-db.sqlite3
-media
-
-# Backup files # 
-*.bak 
-
-# If you are using PyCharm # 
-.idea/**/workspace.xml 
-.idea/**/tasks.xml 
-.idea/dictionaries 
+ q
 .idea/**/dataSources/ 
 .idea/**/dataSources.ids 
 .idea/**/dataSources.xml 
