@@ -1,33 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="//fonts.googleapis.com/css?family=Open+Sans"
+        />
+    </head>
+    <style>
+        body {
+            font-family: "Open Sans", Arial, Helvetica;
+        }
+        h1 {
+            font-family: "Open Sans";
+            font-size: 24px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 700;
+            line-height: 26.4px;
+        }
+        h3 {
+            font-family: "Open Sans";
+            font-size: 14px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 700;
+            line-height: 15.4px;
+        }
+        p {
+            font-family: "Open Sans";
+            font-size: 14px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 20px;
+        }
+        blockquote {
+            font-family: "Open Sans";
+            font-size: 21px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 30px;
+        }
+        pre {
+            font-family: "Open Sans";
+            font-size: 13px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 18.5714px;
+        }
+        html {
+            background: linear-gradient(45deg, #000000 0%, #333333 100%);
+            color: white;
+            height: 100%;
+        }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+        .pubg-tournament-card {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 50% 50%;
+        }
 
-<body>
-    {% block content %}
-    <h1>Hollywood Best Movies</h1>
-    {% endblock%}
-    
-    
+        @media screen and (min-width: 400px) {
+            .movie-details-card {
+                display: grid;
+                grid-template-columns: 25% 25% 25% 25%;
+                width: 100%;
+            }
+        }
 
-    
-    {% for Movie in movies %}
-    <h1>Movie Title : {{Movie.Movie_title}}</h1>
-    <h1>Director : {{Movie.Director}}</h1>
-    <h1>Starring : {{Movie.Starring}}</h1>
-    <h1>Production Company : {{Movie.Production_company}}</h1>
-    <h3>Releas Date : {{Movie.Release_Date}}</h3>
-    <h3>Language : {{Movie.Movie_Language}}</h3>
-    
+        .card-body label {
+            font-size: 12px;
+        }   
+    </style>
+    <body>
+        {% block content %}
+        <h1>Hollywood Best Movies</h1>
+        {% endblock%} {% for Movie in movies %}
+        <section>
+            <h2>{{Movie.Movie_title}}</h2>
 
-    <hr>
-    {% endfor %}
-    
-    
-</body>
+            <div class="movie-details-card">
+                <div class="card-body">
+                    <label>Director</label>
+                    <div>{{Movie.Director}}</div>
+                </div>
+                <div class="card-body">
+                    <label>Starring </label>
+                    <div>{{Movie.Starring}}</div>
+                </div>
+                <div class="card-body">
+                    <label>Production Company</label>
+                    <div>{{Movie.Production_company}}</div>
+                </div>
+                <div class="card-body">
+                    <label>Release Date </label>
+                    <div>{{Movie.Release_Date}}</div>
+                </div>
+                <div class="card-body">
+                    <label>Language </label>
+                    <div>{{Movie.Movie_Language}}}</div>
+                </div>
+            </div>
+        </section>
 
+        {% endfor %}
+    </body>
 </html>
