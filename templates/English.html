@@ -77,11 +77,17 @@
             font-size: 12px;
         }   
     </style>
+    
     <body>
         {% block content %}
-        <h1>Hollywood Best Movies</h1>
+        <h1><u>Hollywood Best Movies</u></h1>
         {% endblock%} {% for Movie in movies %}
         <section>
+            <img src='{{Movie.Image.url}}'alt="{{ post.title }}"/>
+            <img src='{{Movie.Image2.url}}' alt="{{ post.title }}" />
+            <img src='{{Movie.Image3.url}}' alt="{{ post.title }}" />
+            <img src='{{Movie.Image4.url}}' alt="{{ post.title }}" />
+            
             <h2>{{Movie.Movie_title}}</h2>
 
             <div class="movie-details-card">
@@ -103,11 +109,24 @@
                 </div>
                 <div class="card-body">
                     <label>Language </label>
-                    <div>{{Movie.Movie_Language}}}</div>
+                    <div>{{Movie.Movie_Language}}</div>
                 </div>
+                <div class="card-body">
+                    <label>Synopsis</label>
+                    <div>{{Movie.Synopsis}}</div>
+                </div>   
+                <div class= "card-body">
+                    <label>Genre</label>
+                    <div>{{Movie.Genre}}</div>
+                </div>
+                
+                    
+                
+                
             </div>
         </section>
-
+          <hr>
         {% endfor %}
+        
     </body>
 </html>
