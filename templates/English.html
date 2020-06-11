@@ -9,9 +9,23 @@
             href="//fonts.googleapis.com/css?family=Open+Sans"
         />
     </head>
+    {% load static %}
+
     <style>
+        html{
+            background-image:url( '{% static 'bodybackground.png' %}');
+            background-size: cover;
+            padding:0;
+            margin:0;
+            height: 100%;
+        }
         body {
             font-family: "Open Sans", Arial, Helvetica;
+            padding:10px;
+            margin: 0px;
+            height: 100%;
+
+            background-color:rgba(0, 0, 0, 0.5)
         }
         h1 {
             font-family: "Open Sans";
@@ -54,7 +68,6 @@
             line-height: 18.5714px;
         }
         html {
-            background: linear-gradient(45deg, #000000 0%, #333333 100%);
             color: white;
             height: 100%;
         }
@@ -78,17 +91,18 @@
         }   
     </style>
     
-    <body>
+    <body style="">
         {% block content %}
         <h1><u>Hollywood Best Movies</u></h1>
         {% endblock%} {% for Movie in movies %}
         <section>
+            <h2>{{Movie.Movie_title}}</h2>
+
             <img src='{{Movie.Image.url}}'alt="{{ post.title }}"/>
             <img src='{{Movie.Image2.url}}' alt="{{ post.title }}" />
             <img src='{{Movie.Image3.url}}' alt="{{ post.title }}" />
             <img src='{{Movie.Image4.url}}' alt="{{ post.title }}" />
             
-            <h2>{{Movie.Movie_title}}</h2>
 
             <div class="movie-details-card">
                 <div class="card-body">
@@ -111,19 +125,19 @@
                     <label>Language </label>
                     <div>{{Movie.Movie_Language}}</div>
                 </div>
-                <div class="card-body">
-                    <label>Synopsis</label>
-                    <div>{{Movie.Synopsis}}</div>
-                </div>   
+                 
                 <div class= "card-body">
                     <label>Genre</label>
                     <div>{{Movie.Genre}}</div>
                 </div>
                 
                     
-                
-                
-            </div>
+        </section>
+        <section>
+            <div class="card-body">
+                <label>Synopsis</label>
+                <div>{{Movie.Synopsis}}</div>
+            </div> 
         </section>
           <hr>
         {% endfor %}

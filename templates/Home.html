@@ -1,24 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    
-    <h1>
-      <a href="English">
-        Best English Movies
-      </a>
-    </h1>
-    <h1><a href="Telugu">Best Telugu Movies</a></h1>
-    <h1><a href="Animation">Best Animation Movies</a></h1>
-    <h1><a href="Malayalam">Best Malayalam Movies</a></h1>
-    <h1><a href="Hindi">Best Hindi Movies</a></h1>
-    <h1><a href="Korean">Best Korean Movies</a></h1>
-    <h1><a href="Horror">Best Horror Movies</a></h1>
-    <h1><a href="Action">Best Action Movies</a></h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    {% load static %}
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans" />
 
-  </body>
+    <body>
+        <style>
+            html {
+                background-image: url("{% static "bodybackground.png" %}");
+                background-size: cover;
+                padding: 0;
+                margin: 0;
+                height: 100%;
+            }
+            body {
+                font-family: "Open Sans", Arial, Helvetica;
+                height: 100%;
+                color: white;
+                padding: 0px;
+                margin: 0px;
+                margin-block-end: 0px;
+                margin-block-start: 0px;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            .movies-list a {
+                color: white;
+            }
+            .movies-list {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+        <div class="movies-list">
+            <h1>
+                <a href="English">
+                    Best English Movies
+                </a>
+            </h1>
+            <h1><a href="Telugu">Best Telugu Movies</a></h1>
+            <h1><a href="Animation">Best Animation Movies</a></h1>
+            <h1><a href="Malayalam">Best Malayalam Movies</a></h1>
+            <h1><a href="Hindi">Best Hindi Movies</a></h1>
+            <h1><a href="Korean">Best Korean Movies</a></h1>
+            <h1><a href="Horror">Best Horror Movies</a></h1>
+            <h1><a href="Action">Best Action Movies</a></h1>
+        </div>
+    </body>
 </html>
