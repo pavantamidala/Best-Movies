@@ -1,39 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
+
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link
-            rel="stylesheet"
-            href="//fonts.googleapis.com/css?family=Open+Sans"
-        />
+        <link href='https://fonts.googleapis.com/css?family=Cinzel:400,700,900' rel='stylesheet' type='text/css'>  
+        <link href='{% static "styles.css" %}' rel='stylesheet' type='text/css'>
     </head>
-    {% load static %}
 
     <style>
-        html{
-            background-image:url( '{% static 'bodybackground.png' %}');
-            background-size: cover;
-            padding:0;
-            margin:0;
-            height: 100%;
-        }
-        body {
-            font-family: "Open Sans", Arial, Helvetica;
-            padding:10px;
-            margin: 0px;
-            height: 100%;
-
-            background-color:rgba(0, 0, 0, 0.5)
-        }
+       
         h1 {
-            font-family: "Open Sans";
             font-size: 24px;
             font-style: normal;
             font-variant: normal;
             font-weight: 700;
             line-height: 26.4px;
+            text-align: center;
         }
         h3 {
             font-family: "Open Sans";
@@ -67,10 +52,13 @@
             font-weight: 400;
             line-height: 18.5714px;
         }
-        html {
-            color: white;
-            height: 100%;
+        .card-body label{
+                font-weight: 700;
+
         }
+       .card-details{
+        font-family:'Arial',Helvetica;
+       }
 
         .pubg-tournament-card {
             display: grid;
@@ -89,46 +77,59 @@
         .card-body label {
             font-size: 12px;
         }   
+       .page-title, .movie-title{
+            font-family: 'Cinzel', serif, Arial, Helvetica;
+            text-align: center;
+        }
+        .images{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+        .images img{
+            padding:10px
+        }
     </style>
     
     <body style="">
+        <div>
         {% block content %}
-        <h1><u>Hollywood Best Movies</u></h1>
+        <h1 class="page-title"><u>Hollywood Best Movies</u></h1>
         {% endblock%} {% for Movie in movies %}
         <section>
-            <h2>{{Movie.Movie_title}}</h2>
-
+            <h2 class="movie-title">{{Movie.Movie_title}}</h2>
+            <div class="images">
             <img src='{{Movie.Image.url}}'alt="{{ post.title }}"/>
             <img src='{{Movie.Image2.url}}' alt="{{ post.title }}" />
             <img src='{{Movie.Image3.url}}' alt="{{ post.title }}" />
             <img src='{{Movie.Image4.url}}' alt="{{ post.title }}" />
-            
+            </div>
 
             <div class="movie-details-card">
                 <div class="card-body">
                     <label>Director</label>
-                    <div>{{Movie.Director}}</div>
+                    <div class="card-details">{{Movie.Director}}</div>
                 </div>
                 <div class="card-body">
                     <label>Starring </label>
-                    <div>{{Movie.Starring}}</div>
+                    <div class="card-details">{{Movie.Starring}}</div>
                 </div>
                 <div class="card-body">
                     <label>Production Company</label>
-                    <div>{{Movie.Production_company}}</div>
+                    <div class="card-details">{{Movie.Production_company}}</div>
                 </div>
                 <div class="card-body">
                     <label>Release Date </label>
-                    <div>{{Movie.Release_Date}}</div>
+                    <div class="card-details">{{Movie.Release_Date}}</div>
                 </div>
                 <div class="card-body">
                     <label>Language </label>
-                    <div>{{Movie.Movie_Language}}</div>
+                    <div class="card-details">{{Movie.Movie_Language}}</div>
                 </div>
                  
                 <div class= "card-body">
                     <label>Genre</label>
-                    <div>{{Movie.Genre}}</div>
+                    <div class="card-details">{{Movie.Genre}}</div>
                 </div>
                 
                     
@@ -136,11 +137,11 @@
         <section>
             <div class="card-body">
                 <label>Synopsis</label>
-                <div>{{Movie.Synopsis}}</div>
+                <div class="card-details">{{Movie.Synopsis}}</div>
             </div> 
         </section>
           <hr>
         {% endfor %}
-        
+    </div>
     </body>
 </html>
