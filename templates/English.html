@@ -11,88 +11,11 @@
     </head>
 
     <style>
-       
-        h1 {
-            font-size: 24px;
-            font-style: normal;
-            font-variant: normal;
-            font-weight: 700;
-            line-height: 26.4px;
-            text-align: center;
-        }
-        h3 {
-            font-family: "Open Sans";
-            font-size: 14px;
-            font-style: normal;
-            font-variant: normal;
-            font-weight: 700;
-            line-height: 15.4px;
-        }
-        p {
-            font-family: "Open Sans";
-            font-size: 14px;
-            font-style: normal;
-            font-variant: normal;
-            font-weight: 400;
-            line-height: 20px;
-        }
-        blockquote {
-            font-family: "Open Sans";
-            font-size: 21px;
-            font-style: normal;
-            font-variant: normal;
-            font-weight: 400;
-            line-height: 30px;
-        }
-        pre {
-            font-family: "Open Sans";
-            font-size: 13px;
-            font-style: normal;
-            font-variant: normal;
-            font-weight: 400;
-            line-height: 18.5714px;
-        }
-        .card-body label{
-                font-weight: 700;
-
-        }
-       .card-details{
-        font-family:'Arial',Helvetica;
-       }
-
-        .pubg-tournament-card {
-            display: grid;
-            width: 100%;
-            grid-template-columns: 50% 50%;
-        }
-
-        @media screen and (min-width: 400px) {
-            .movie-details-card {
-                display: grid;
-                grid-template-columns: 25% 25% 25% 25%;
-                width: 100%;
-            }
-        }
-
-        .card-body label {
-            font-size: 12px;
-        }   
-       .page-title, .movie-title{
-            font-family: 'Cinzel', serif, Arial, Helvetica;
-            text-align: center;
-        }
-        .images{
-            text-align: center;
-            display: flex;
-            justify-content: center;
-        }
-        .images img{
-            padding:10px
-        }
+    
     </style>
     
     <body style="">
-        <div>
+        <div class="container">
         {% block content %}
         <h1 class="page-title"><u>Hollywood Best Movies</u></h1>
         {% endblock%} {% for Movie in movies %}
@@ -135,7 +58,7 @@
                     
         </section>
         <section>
-            <div class="card-body">
+            <div class="card-body synopsis">
                 <label>Synopsis</label>
                 <div class="card-details">{{Movie.Synopsis}}</div>
             </div> 
