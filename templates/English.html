@@ -17,8 +17,12 @@
     <body style="">
         <div class="container">
         {% block content %}
+        
         <h1 class="page-title"><u>Hollywood Best Movies</u></h1>
-        {% endblock%} {% for Movie in movies %}
+        {% endblock%}   <button class='btn backtohome' onclick="window.location.href='/'">
+            <i class='bck-icon'></i>
+            <span>Back</span></button>{% for Movie in movies %}
+      
         <section>
             <h2 class="movie-title">{{Movie.Movie_title}}</h2>
             <div class="images">
